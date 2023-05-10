@@ -4,7 +4,7 @@ class Product{
   int? _offset;
   late List<ProductModel> _products;
   // we can access privat list(_products) from outside, using public one products
-  List<ProductModel> get products=>_products;
+  List<ProductModel> get products => _products;
 
   Product({required totalSize, required typeId, required offset, required products}) {
     this._totalSize = totalSize;
@@ -41,7 +41,7 @@ class ProductModel{
   int? typedId;
 
 
-  ProductModel.name({
+  ProductModel({
       this.id,
       this.name,
       this.description,
@@ -65,6 +65,22 @@ class ProductModel{
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     typedId = json['type_id'];
+  }
+
+  // convert json to map/object
+  Map<String, dynamic> toJson(){
+    return{
+      'id': this.id,
+      'name': this.name,
+      'price': this.price,
+      'description': this.description,
+      'stars': this.stars,
+      'img': this.img,
+      'location': this.location,
+      'created_at': this.createdAt,
+      'updated_at': this.updatedAt,
+      'type_id': this.typedId,
+    };
   }
 
 }

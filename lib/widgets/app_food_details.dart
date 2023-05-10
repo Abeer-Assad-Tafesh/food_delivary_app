@@ -5,8 +5,10 @@ import 'big_text.dart';
 import 'icon_and_text.dart';
 
 class AppFoodDetails extends StatelessWidget {
-  const AppFoodDetails({
+  String name;
+  AppFoodDetails({
     super.key,
+     this.name = 'Chinese Side'
   });
 
   @override
@@ -15,7 +17,7 @@ class AppFoodDetails extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         BigText(
-          text: 'Chinese Side',
+          text: name,
           color: Colors.black,
           size: 16,
         ),
